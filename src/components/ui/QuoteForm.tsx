@@ -16,19 +16,21 @@ export const QuoteForm = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Aquí estructuramos el mensaje para WhatsApp (usando %0A para saltos de línea)
-        const text = `Hola Maximo Sabor, me gustaría cotizar una experiencia gastronómica.%0A%0A*Detalles del Evento:*%0A🍽️ Tipo: ${formData.tipo}%0A👥 Invitados: ${formData.invitados}%0A📅 Fecha: ${formData.fecha}%0A%0A¡Quedo a la espera de más información!`;
+        // 1. Escribimos el texto de forma natural con \n
+        const rawText = `Hola Maximo Sabor, me gustaría cotizar una experiencia gastronómica.\n\n*Detalles del Evento:*\n🍽️ Tipo: ${formData.tipo}\n👥 Invitados: ${formData.invitados}\n📅 Fecha: ${formData.fecha}\n\n¡Quedo a la espera de más información!`;
 
-        // Reemplaza esto con el número real de WhatsApp Business del local (formato internacional sin el +)
+        // 2. Codificamos TODO el string para que la URL sea 100% segura
+        const encodedText = encodeURIComponent(rawText);
+
         const phone = "56997794706";
 
-        const url = `https://wa.me/${phone}?text=${text}`;
-        window.open(url, "_blank"); // Abre en una nueva pestaña
+        const url = `https://wa.me/${phone}?text=${encodedText}`;
+        window.open(url, "_blank");
     };
 
     return (
         <section id="cotizador" className="w-full bg-brand-dark px-4 pb-20 pt-10">
-            <div className="max-w-4xl mx-auto bg-brand-cream rounded-sm shadow-2xl p-8 md:p-12 -mt-24 relative z-20 border border-brand-gold/30">
+            <div className="max-w-4xl mx-auto bg-brand-cream rounded-lg shadow-2xl p-8 md:p-12 -mt-24 relative z-20 border border-brand-gold/30">
 
                 <div className="text-center mb-8">
                     <h2 className="font-serif text-3xl md:text-4xl text-brand-dark mb-2">

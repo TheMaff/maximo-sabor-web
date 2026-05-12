@@ -19,7 +19,7 @@ export const Gallery = () => {
             </div>
 
             {/* Grid Dinámico de Imágenes */}
-            <div className="max-w-[1600px] mx-auto px-2 md:px-4">
+            <div className="max-w-5xl mx-auto px-4">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4">
                     {placeholders.map((item) => (
                         <div key={item} className="relative aspect-[4/5] w-full overflow-hidden group cursor-pointer bg-brand-dark/10">

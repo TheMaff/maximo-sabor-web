@@ -3,7 +3,7 @@ import Image from 'next/image';
 export const Navbar = () => {
     return (
         <nav className="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-brand-gold/20">
-            <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-20">
+            <div className="max-w-5xl mx-auto px-4 flex justify-between items-center h-20">
 
                 {/* LOGO  */}
                 <div className="relative w-48 h-16 flex items-center">
