@@ -1,19 +1,22 @@
-// tailwind.config.ts
+import type { Config } from "tailwindcss";
+
 const config: Config = {
     theme: {
         extend: {
             colors: {
                 brand: {
-                    gold: '#C5A059',      // Oro mate del logo
-                    dark: '#051C2C',      // Azul petróleo profundo de la versión catering
-                    cream: '#F9F7F2',     // Fondo "Off-white" para elegancia
-                    charcoal: '#2D2D2D',  // Gris para textos legibles
+                    gold: '#C5A059',
+                    dark: '#051C2C',
+                    cream: '#F9F7F2',
+                    charcoal: '#2D2D2D',
                 },
             },
             fontFamily: {
-                serif: ['var(--font-didot)', 'serif'], // Para títulos de lujo
-                sans: ['var(--font-inter)', 'sans-serif'], // Para lectura clara
+                serif: ['var(--font-didot)', 'serif'],
+                sans: ['var(--font-inter)', 'sans-serif'],
             },
         },
     },
 };
+
+export default config;
