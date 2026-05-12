@@ -18,7 +18,7 @@ export const Gallery = () => {
     ];
 
     return (
-        <section id="galeria" className="w-full bg-brand-cream border-t border-b border-brand-gold py-16 relative">
+        <section id="galeria" className="w-full bg-brand-cream border-t border-b border-brand-gold py-16 relative scroll-mt-24">
             <div className="text-center mb-12 px-4">
                 <h3 className="font-serif text-xl md:text-2xl tracking-[0.3em] text-brand-dark uppercase">
                     IOO-tos
@@ -77,7 +77,7 @@ export const Gallery = () => {
                     </button>
 
                     <div
-                        className="relative contents w-auto max-w-5xl aspect-square md:aspect-video shadow-2xl border border-brand-gold/20"
+                        className="relative w-full max-w-5xl aspect-square md:aspect-video shadow-2xl border border-brand-gold/20"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Imagen a tamaño completo */}

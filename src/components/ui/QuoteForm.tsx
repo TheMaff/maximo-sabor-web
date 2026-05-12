@@ -29,8 +29,8 @@ export const QuoteForm = () => {
     };
 
     return (
-        <section id="cotizador" className="w-full bg-brand-dark px-4 pb-20 pt-10">
-            <div className="max-w-4xl mx-auto bg-brand-cream rounded-lg shadow-2xl p-8 md:p-12 -mt-24 relative z-20 border border-brand-gold/30">
+        <section className="w-full bg-brand-dark px-4 pb-20 pt-10">
+            <div id="cotizador" className="max-w-4xl mx-auto bg-brand-cream rounded-lg shadow-2xl p-8 md:p-12 -mt-24 relative z-20 border border-brand-gold/30 scroll-mt-32">
 
                 <div className="text-center mb-8">
                     <h2 className="font-serif text-3xl md:text-4xl text-brand-dark mb-2">
