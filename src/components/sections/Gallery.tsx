@@ -4,11 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 
 export const Gallery = () => {
-    // Estado para controlar el popup
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-    // Array de imágenes (Aquí pondrás las rutas de tus mejores fotos)
-    const images = [1, 2, 3, 4, 5, 6, 7, 8];
+    // Mapeamos exactamente los nombres de los archivos que tienes en tu carpeta public/gallery
+    const images = [
+        { src: "/gallery/banqueteria.webp", alt: "Banquetería Premium en Coquimbo" },
+        { src: "/gallery/bocado-tapadito.webp", alt: "Tapaditos artesanales de autor" },
+        { src: "/gallery/bocado-tartaleta.webp", alt: "Mini tartaletas de fruta gourmet" },
+        { src: "/gallery/postre.webp", alt: "Postres premium en vasito" },
+        { src: "/gallery/tabla-quesos-fiambres.webp", alt: "Tabla de quesos y fiambres" },
+        { src: "/gallery/bocado-alfajor.webp", alt: "Alfajores artesanales" },
+        { src: "/gallery/torta.webp", alt: "Torta de autor para eventos" },
+    ];
 
     return (
         <section id="galeria" className="w-full bg-brand-cream border-t border-b border-brand-gold py-16 relative">
@@ -27,18 +34,24 @@ export const Gallery = () => {
                 <div className="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
                     {images.map((item, index) => (
                         <div
-                            key={item}
+                            key={index}
                             className="relative flex-none w-[280px] aspect-[4/5] overflow-hidden cursor-pointer group bg-brand-dark/5 snap-center border border-brand-gold/10"
                             onClick={() => setSelectedImage(index)}
                         >
-                            {/* <Image 
-                src={`/gallery-${item}.webp`} 
-                alt={`Bocado de autor ${item}`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              /> */}
-                            <div className="absolute inset-0 flex items-center justify-center text-brand-charcoal/40 text-xs font-sans p-4 text-center transition-colors group-hover:bg-brand-dark/10">
-                                Experiencia {item}
+                            {/* Ahora usamos el componente Image de Next.js con tus rutas reales */}
+                            <Image
+                                src={item.src}
+                                alt={item.alt}
+                                fill
+                                sizes="(max-width: 768px) 280px, 280px"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+
+                            {/* Overlay sutil al pasar el mouse */}
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-brand-dark/20 transition-opacity duration-500">
+                                <span className="text-brand-cream text-sm font-sans tracking-widest uppercase bg-brand-dark/50 px-4 py-2 backdrop-blur-sm border border-brand-gold/30">
+                                    Ver detalle
+                                </span>
                             </div>
                         </div>
                     ))}
@@ -50,26 +63,32 @@ export const Gallery = () => {
                 </div>
             </div>
 
-            {/* Lightbox / Popup Modal (Se mantiene igual) */}
+            {/* Lightbox / Popup Modal */}
             {selectedImage !== null && (
                 <div
-                    className="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-sm flex items-center justify-center p-4"
+                    className="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
                     onClick={() => setSelectedImage(null)}
                 >
                     <button
-                        className="absolute top-6 right-6 text-brand-cream hover:text-brand-gold text-4xl transition-colors"
+                        className="absolute top-4 right-4 md:top-8 md:right-8 text-brand-cream hover:text-brand-gold text-4xl transition-colors z-50"
                         onClick={() => setSelectedImage(null)}
                     >
                         &times;
                     </button>
 
                     <div
-                        className="relative w-full max-w-4xl aspect-[4/3] md:aspect-video bg-brand-dark shadow-2xl border border-brand-gold/20"
+                        className="relative contents w-auto max-w-5xl aspect-square md:aspect-video shadow-2xl border border-brand-gold/20"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="absolute inset-0 flex items-center justify-center text-brand-gold font-serif text-2xl">
-                            Vista Ampliada {images[selectedImage]}
-                        </div>
+                        {/* Imagen a tamaño completo */}
+                        <Image
+                            src={images[selectedImage].src}
+                            alt={images[selectedImage].alt}
+                            fill
+                            sizes="100vw"
+                            className="object-contain bg-brand-dark"
+                            priority // Prioridad alta al abrir el popup
+                        />
                     </div>
                 </div>
             )}
