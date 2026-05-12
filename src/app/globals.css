@@ -16,3 +16,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Utilidad para esconder scrollbars manteniendo funcionalidad */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
