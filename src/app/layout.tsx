@@ -17,8 +17,33 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Maximo Sabor | Banquetería & Cóctel de Autor",
-  description: "Transformamos tu evento corporativo o social en Coquimbo en una obra de arte inolvidable.",
+  title: "Maximo Sabor | Cóctel y Banquetería en Coquimbo",
+  description: "Cotiza cientos de bocados dulces y salados de autor para tus celebraciones en Coquimbo. Especialistas en cóctel para matrimonios, bautizos, cumpleaños y todo tipo de eventos.",
+  keywords: [
+    "banquetería Coquimbo",
+    "cientos de dulces",
+    "cientos de salados",
+    "cóctel para eventos",
+    "postres para cocktail",
+    "catering matrimonios Coquimbo",
+    "Maximo Sabor"
+  ],
+  openGraph: {
+    title: "Maximo Sabor | Cóctel y Banquetería",
+    description: "Cientos de opciones en dulces y salados de autor para matrimonios, bautizos, cumpleaños y eventos corporativos en Coquimbo. Cotiza sin compromiso.",
+    url: "https://maximosabor.vercel.app", // Aquí irá tu dominio final (.cl o .com)
+    siteName: "Maximo Sabor",
+    images: [
+      {
+        url: "/gallery/banqueteria.webp", // Usará tu mejor foto al compartir el link
+        width: 1200,
+        height: 630,
+        alt: "Mesa de Banquetería Premium Maximo Sabor",
+      },
+    ],
+    locale: "es_CL",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -22,7 +22,7 @@ export const QuoteForm = () => {
         // 2. Codificamos TODO el string para que la URL sea 100% segura
         const encodedText = encodeURIComponent(rawText);
 
-        const phone = "56997794706";
+        const phone = "56961881105";
 
         const url = `https://wa.me/${phone}?text=${encodedText}`;
         window.open(url, "_blank");
