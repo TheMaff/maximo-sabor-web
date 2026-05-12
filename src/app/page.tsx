@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Gallery } from "@/components/sections/Gallery";
+import { QuoteForm } from "@/components/ui/QuoteForm"; // Añadimos la importación
 
 export default function Home() {
   return (
@@ -8,8 +9,14 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Gallery />
-      {/* Espacio extra abajo para simular el final de la página por ahora */}
-      <div className="h-[40vh] bg-brand-dark"></div>
+      <QuoteForm />
+
+      {/* Footer Minimalista */}
+      <footer className="w-full bg-brand-dark py-8 text-center border-t border-brand-gold/20">
+        <p className="text-brand-cream/60 text-xs tracking-widest uppercase font-sans">
+          &copy; {new Date().getFullYear()} Maximo Sabor. Coquimbo, Chile. Todos los derechos reservados.
+        </p>
+      </footer>
     </main>
   );
 }

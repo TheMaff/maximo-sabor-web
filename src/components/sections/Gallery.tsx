@@ -10,7 +10,11 @@ export const Gallery = () => {
             {/* Navegación de Categorías */}
             <div className="text-center mb-12 px-4">
                 <h3 className="font-serif text-xl md:text-2xl tracking-[0.3em] text-brand-dark uppercase">
-                    Dulce <span className="text-brand-gold mx-2">&bull;</span> Salado <span className="text-brand-gold mx-2">&bull;</span> Bodegas
+                    100tos
+                    <span className="text-brand-gold mx-2">&bull;</span>
+                    Dulces
+                    <span className="text-brand-gold mx-2">&bull;</span>
+                    Salados
                 </h3>
             </div>
 
