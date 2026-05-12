@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export const Hero = () => {
     return (
-        <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+        <section id="experiencia" className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
             {/* Fondo con imagen y overlay para mejorar la lectura */}
             <div className="absolute inset-0 z-0">
                 <Image
