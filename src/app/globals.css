@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Nuestra paleta de Lujo Silencioso */
+  --color-brand-gold: #C5A059;
+  --color-brand-dark: #051C2C;
+  --color-brand-cream: #F9F7F2;
+  --color-brand-charcoal: #2D2D2D;
+
+  /* Tipografías (Asegúrate de importar las fuentes en layout.tsx luego) */
+  --font-serif: var(--font-didot), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+/* Opcional: Un pequeño reset para que el scroll sea suave al pinchar enlaces */
+html {
+  scroll-behavior: smooth;
+}
